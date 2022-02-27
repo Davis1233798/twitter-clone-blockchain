@@ -1,7 +1,13 @@
-import{FiMoreHorizontal} from 'react-icons/fi'
+
 import{VscTwitter} from 'react-icons/vsc'
 import{SidebarOption} from './SidebarOption'
-import { useState } from 'react'
+import{ useState } from 'react'
+import{ RiHome7Line , RiHome7Fill,RiFileList2Fill} from 'react-icons/ri'
+import {biHash} from 'react-icons/bi'
+import{FiBell,FiMoreHorizontal} from 'react-icons/fi'
+import{HiOutlineMail,HiMail} from 'react-icons/hi'
+import{FaRegListAlt,FaHashtagm,FaBell} from 'react-icons/fa'
+import{CgMoreO}from'react-icons/cg'
 
 const style = {
     wrapper:`flex-[0.7] px-8 flex flex-col`,
@@ -24,11 +30,13 @@ const[select,setSelected] = useState(initialSelectedIcon)
             <div className={style.twitterIconContainer}>
                 <VscTwitter />
             </div>
-            <div className={style.navContainer}>
-                <SidebarOption Icon={selected=='Home'? VscTwitter : VscTwitter}/>
+            <div className={style.navContainter}>
+                <SidebarOption Icon={Selected=='Home'? RiHome7Fill : RiHome7Line}
                 text = 'Home'
-                isActive = {Boolean}
-                
+                isActive = {Boolean(selected=='Home')}
+                setSelected={setSelected}
+                redrict={'/'}
+                />
                 <div>Explore</div>
                 <div>Notifications</div>
                 <div>Messages</div>
